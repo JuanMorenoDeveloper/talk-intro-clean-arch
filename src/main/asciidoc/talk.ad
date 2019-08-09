@@ -7,8 +7,6 @@
 
 include::footer.ad[]
 
-== Arquitectura Clean
-
 == ¿Qué es arquitectura de software?
 
 * Estructura de un Sistema compuesta de elementos [1] con propiedades visibles de forma externa y las relaciones que existen entre ellos. **Software Engineering Institute,SEI**.
