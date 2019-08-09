@@ -21,6 +21,14 @@ include::footer.ad[]
 
 * Estructura de un framework. Ej: Symfony, Angular, Android SDK, etc.
 
+== Algunos tipo de arquitecturas
+
+* DCI (Data, Context, and Interaction)
+* Onion
+* *Hexagonal*
+* Layered
+* *Clean*
+
 == Introducción a la Arquitectura Clean
 
 "Architecture is about intent, not Frameworks"
