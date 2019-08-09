@@ -1,0 +1,115 @@
+= Introducción a Clean Architecture
+:icons: font
+:twitter-tag: ACCSA
+:conference-tag:
+:talk-tag: Intro Clean Arch
+:linkattrs:
+
+include::footer.ad[]
+
+== Arquitectura Clean
+
+== ¿Qué es arquitectura de software?
+
+* Estructura de un Sistema compuesta de elementos [1] con propiedades visibles de forma externa y las relaciones que existen entre ellos. **Software Engineering Institute,SEI**.
+
+[1] Definición abstracta: objetos, hilos, clases, componentes...
+
+== ¿Qué NO es una Arquitectura de Software?
+
+* Jerarquía de carpetas. Ej: paquetes en java.
+
+* MVC o MVP. El uso del patrón MVC o MVP no implica una arquitectura.
+
+* Estructura de un framework. Ej: Symfony, Angular, Android SDK, etc.
+
+== Introducción a la Arquitectura Clean
+
+"Architecture is about intent, not Frameworks"
+
+*Robert C. Martin*
+
+== Architecture is about intent, not Frameworks
+
+* Una arquitectura se centra en lo que hace la aplicación, no en el framework o librerías que usa.
+
+* El dominio o modelo de negocio (casos de uso y entidades) debe ser el núcleo la aplicación.
+
+* Base de datos, Servicios Web, Framework, librerías, User Interface, etc. no es relevante para el modelo de negocio.
+
+== Capas y Dependencias
+
+== Dominio o Modelo de Negocio
+
+image::dominio.png[background, size=auto]
+
+== Dominio o Modelo de Negocio
+
+* Lo más importante de la aplicación.
+
+* No depende de ninguna otra capa.
+
+* Formado por Casos de Usos (Interactors) y entidades
+
+== Presentadores y Controladores
+
+image::presenters.png[background, size=auto]
+
+== Presentadores y Controladores
+
+* Comunica las interfaces externas al dominio con los casos de uso.
+
+* Adaptadores de datos según la capa.
+
+== Interfaces externas
+
+image::interfaces-externas.png[background, size=auto]
+
+== Interfaces externas
+
+* Framework o librerías que se usan para el desarrollo de la aplicación.
+
+* Base de datos, Interfaz de Usuario, Servicios Web, etc.
+
+== Regla de Dependencia
+
+image::regla-de-dependencia.png[background, size=auto]
+
+== Regla de Dependencia
+
+* Las dependencias a nivel de código fuente sólo pueden apuntar hacia dentro.
+
+* Una capa interna no puede usar elementos de una capa externa.
+
+== ¿Por qué la Arquitectura Clean?
+
+* Evolución constante de la aplicación con nuevas funcionalidades.
+
+* Desarrollo paralelo con los servicios web.
+
+* Requisitos: minimizar al máximo las incidencias. Desarrollar test.
+
+* Posibilidad de incluir desarrolladores que no conozcan los frameworks (Android, Angular...)
+
+== Conclusiones Arquitectura clean
+
+* La definición de la arquitectura, integración con librerías, inyección de dependencias, etc. hace que el inicio sea lento.
+
+* Al estar las funcionalidades distribuidas por capas, se crea la sensación de no encontrar el código o de estar perdido.
+
+* El trabajar con capas te aísla de problemas que afectan a otras capas.
+
+[NOTE.speaker]
+====
+Recomendación: crear un proyecto con todo esto definido y que sea la base de futuros proyectos.
+====
+
+== Conclusiones Arquitectura Clean
+
+* El trabajar con abstracciones permite que el proyecto sea más flexible ante cambios.
+
+* Reutilización de código. Toda la lógica está centrada en la capa de dominio que es accesible desde cualquier otra capa.
+
+* Código testeable. No hay código acoplado que no permita falsear ciertos datos para comprobar distintos comportamientos.
+
+include::self.ad[]
